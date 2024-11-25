@@ -1,14 +1,7 @@
 package br.com.bancodehoras.entity;
 
 import java.time.LocalDateTime;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -17,31 +10,39 @@ public class registroHoras {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long bancoHorasID;
-	
+
 	@ManyToOne
-	@JoinColumn(name= "usuario_id", nullable = false)
+	@JoinColumn(name = "usuario_id", nullable = false)
 	private usuario usuario;
 
-	@Column
+	@Column(nullable = false)
 	@NotNull
-	
-	private LocalDateTime dataEntrada;
-	
-	@Column
-	@NotNull
-	
-	private LocalDateTime dataSaida;
-	
-	public registroHoras() {
-		
-	}
+	private LocalDateTime dataRegistro;
 
-	public registroHoras(Long bancoHorasID, br.com.bancodehoras.entity.usuario usuario,
-			@NotNull @NotEmpty LocalDateTime dataEntrada, @NotNull @NotEmpty LocalDateTime dataSaida) {
+	@Column(nullable = false)
+	@NotNull
+	private LocalDateTime hora;
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	@NotNull
+	private TipoDeRegistro tipoDeRegistro;
+
+	// Construtor padrão
+	public registroHoras() {}
+
+	// Construtor com parâmetros
+	public registroHoras(Long bancoHorasID, usuario usuario, LocalDateTime dataRegistro, LocalDateTime hora, TipoDeRegistro tipoDeRegistro) {
 		this.bancoHorasID = bancoHorasID;
 		this.usuario = usuario;
-		this.dataEntrada = dataEntrada;
-		this.dataSaida = dataSaida;
+		this.dataRegistro = dataRegistro;
+		this.hora = hora;
+		this.tipoDeRegistro = tipoDeRegistro;
+	}
+
+	// Getters e Setters
+	public Long getBancoHorasID() {
+		return bancoHorasID;
 	}
 
 	public usuario getUsuario() {
@@ -52,28 +53,27 @@ public class registroHoras {
 		this.usuario = usuario;
 	}
 
-	public LocalDateTime getDataEntrada() {
-		return dataEntrada;
+	public LocalDateTime getDataRegistro() {
+		return dataRegistro;
 	}
 
-	public void setDataEntrada(LocalDateTime dataEntrada) {
-		this.dataEntrada = dataEntrada;
+	public void setDataRegistro(LocalDateTime dataRegistro) {
+		this.dataRegistro = dataRegistro;
 	}
 
-	public LocalDateTime getDataSaida() {
-		return dataSaida;
+	public LocalDateTime getHora() {
+		return hora;
 	}
 
-	public void setDataSaida(LocalDateTime dataSaida) {
-		this.dataSaida = dataSaida;
+	public void setHora(LocalDateTime hora) {
+		this.hora = hora;
 	}
 
-	public Long getBancoHorasID() {
-		return bancoHorasID;
+	public TipoDeRegistro getTipoDeRegistro() {
+		return tipoDeRegistro;
 	}
-	
-	
-	
-	
-	
+
+	public void setTipoDeRegistro(TipoDeRegistro tipoDeRegistro) {
+		this.tipoDeRegistro = tipoDeRegistro;
+	}
 }

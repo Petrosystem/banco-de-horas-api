@@ -33,7 +33,7 @@ public class usuario {
 
 	@Column(name = "cargo", nullable = false)
 	@NotNull
-	private String cargo;
+	private Cargos cargo;
 	
 	@Column(name = "jornadahoras", nullable = false)
 	@NotNull
@@ -44,7 +44,7 @@ public class usuario {
 	}
 
 	public usuario(Long usuario_id, @NotNull @NotEmpty String username, @NotNull @NotEmpty String nome, @NotEmpty String email,
-			@NotNull @NotEmpty String password, @NotNull @NotEmpty String cargo) {
+			@NotNull @NotEmpty String password, @NotNull @NotEmpty Cargos cargo) {
 		this.usuario_id = usuario_id;
 		this.username = username;
 		this.nome = nome;
@@ -89,11 +89,11 @@ public class usuario {
 		return usuario_id;
 	}
 
-	public String getCargo() {
+	public Cargos getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(String cargo) {
+	public void setCargo(Cargos cargo) {
 		this.cargo = cargo;
 	}
 	

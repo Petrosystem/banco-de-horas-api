@@ -17,7 +17,7 @@ public class registroAtestado {
 
 	@ManyToOne
 	@JoinColumn(name = "usuario_id", nullable = false)
-	private usuario usuario;
+	private Funcionario usuario;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,8 +37,8 @@ public class registroAtestado {
 	@NotNull
 	private String arquivoatestado;
 
-	public registroAtestado(br.com.bancodehoras.entity.usuario usuario, Long id_atestado, LocalDateTime datainicio,
-			LocalDateTime datafinal, @NotNull String motivo, @NotNull String arquivoatestado) {
+	public registroAtestado(Funcionario usuario, Long id_atestado, LocalDateTime datainicio,
+                            LocalDateTime datafinal, @NotNull String motivo, @NotNull String arquivoatestado) {
 
 		this.usuario = usuario;
 		this.id_atestado = id_atestado;
@@ -48,11 +48,11 @@ public class registroAtestado {
 		this.arquivoatestado = arquivoatestado;
 	}
 
-	public usuario getUsuario() {
+	public Funcionario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(usuario usuario) {
+	public void setUsuario(Funcionario usuario) {
 		this.usuario = usuario;
 	}
 

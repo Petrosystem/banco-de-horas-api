@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.bancodehoras.entity.usuario;
+import br.com.bancodehoras.entity.Funcionario;
 import br.com.bancodehoras.repository.usuarioRepository;
 import jakarta.transaction.Transactional;
 
@@ -15,14 +15,14 @@ public class usuarioService {
 	@Autowired
 	private usuarioRepository usuarioRepository;
 
-	public List<usuario> ListarUsuario() {
-		List<usuario> usuario = usuarioRepository.findAll();
+	public List<Funcionario> ListarUsuario() {
+		List<Funcionario> usuario = usuarioRepository.findAll();
 		return usuario;
 
 	}
 
 	@Transactional
-	public usuario salvarUsuario(usuario usuario) {
+	public Funcionario salvarUsuario(Funcionario usuario) {
 		usuario = usuarioRepository.save(usuario);
 		return usuario;
 	}

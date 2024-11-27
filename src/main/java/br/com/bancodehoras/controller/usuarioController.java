@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.bancodehoras.entity.usuario;
+import br.com.bancodehoras.entity.Funcionario;
 import br.com.bancodehoras.service.usuarioService;
 
 @RestController
@@ -24,16 +24,16 @@ public class usuarioController {
 
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/salvar")
-	public usuario cadastrarUsuario(@RequestBody usuario usuario) {
-		usuario novoUser = usuarioService.salvarUsuario(usuario);
+	public Funcionario cadastrarUsuario(@RequestBody Funcionario usuario) {
+		Funcionario novoUser = usuarioService.salvarUsuario(usuario);
 		return novoUser;
 	}
 
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping("/listar-user")
 	@ResponseBody
-	public List<usuario> listarUsuario() {
-		List<usuario> usuario = usuarioService.ListarUsuario();
+	public List<Funcionario> listarUsuario() {
+		List<Funcionario> usuario = usuarioService.ListarUsuario();
 		return usuario;
 	}
 

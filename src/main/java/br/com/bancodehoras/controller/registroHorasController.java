@@ -1,5 +1,5 @@
 package br.com.bancodehoras.controller;
-import br.com.bancodehoras.entity.registroHoras;
+import br.com.bancodehoras.entity.RegistroHoras;
 import br.com.bancodehoras.service.registroHorasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +14,8 @@ public class registroHorasController {
     private registroHorasService registroHorasService;
 
     @PostMapping("")
-    public registroHoras cadastrarHoras(@RequestBody registroHoras registroHoras){
-        registroHoras newRegistroHoras =  registroHorasService.save(registroHoras);
+    public RegistroHoras cadastrarHoras(@RequestBody RegistroHoras registroHoras){
+        RegistroHoras newRegistroHoras =  registroHorasService.save(registroHoras);
         return newRegistroHoras;
 
     }

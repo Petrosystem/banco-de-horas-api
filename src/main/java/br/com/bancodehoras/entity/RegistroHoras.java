@@ -40,6 +40,15 @@ public class RegistroHoras {
 	@Column(name = "hora_extra")
 	private BigDecimal horaExtra;
 
+	@Column(name = "hora_saida")
+	private Time horaSaida;
+
+	@Column(name = "hora_entrada")
+	private Time horaEntrada;
+
+	@Column(name = "data_criacao")
+	private LocalDateTime dataCriacao;
+
 
 
 

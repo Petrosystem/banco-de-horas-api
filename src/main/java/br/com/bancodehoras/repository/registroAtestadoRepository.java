@@ -2,8 +2,8 @@ package br.com.bancodehoras.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.bancodehoras.entity.registroAtestado;
+import br.com.bancodehoras.entity.Atestado;
 
-public interface registroAtestadoRepository extends JpaRepository<registroAtestado, Long>{
+public interface registroAtestadoRepository extends JpaRepository<Atestado, Long>{
 
 }

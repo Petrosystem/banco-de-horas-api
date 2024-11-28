@@ -21,6 +21,7 @@ public class Funcionario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
+	@Column(name = "funcionario_id")
 	private Long funcionarioId;
 
 	private String nome;

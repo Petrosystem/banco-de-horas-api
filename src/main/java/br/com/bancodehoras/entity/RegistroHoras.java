@@ -28,7 +28,7 @@ public class RegistroHoras {
 	private Time horasTrabalhadas;
 
 	@ManyToOne
-	@JoinColumn(name = "usuario_id", nullable = false)
+	@JoinColumn(name = "funcionario_id", nullable = false)
 	private Funcionario funcionario;
 
 	@Column(name = "data_registro")
@@ -39,6 +39,15 @@ public class RegistroHoras {
 
 	@Column(name = "hora_extra")
 	private BigDecimal horaExtra;
+
+	@Column(name = "hora_saida")
+	private Time horaSaida;
+
+	@Column(name = "hora_entrada")
+	private Time horaEntrada;
+
+	@Column(name = "data_criacao")
+	private LocalDateTime dataCriacao;
 
 
 

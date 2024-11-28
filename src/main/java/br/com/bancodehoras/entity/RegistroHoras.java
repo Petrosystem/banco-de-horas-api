@@ -28,7 +28,7 @@ public class RegistroHoras {
 	private Time horasTrabalhadas;
 
 	@ManyToOne
-	@JoinColumn(name = "usuario_id", nullable = false)
+	@JoinColumn(name = "funcionario_id", nullable = false)
 	private Funcionario funcionario;
 
 	@Column(name = "data_registro")

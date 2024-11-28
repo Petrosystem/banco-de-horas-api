@@ -24,8 +24,8 @@ public class Atestado {
 
 
 	@ManyToOne
-	@JoinColumn(name = "usuario_id", nullable = false)
-	private Funcionario usuario;
+	@JoinColumn(name = "funcionario_id", nullable = false)
+	private Funcionario funcionario;
 
 
 	@Column(name = "data_inicio",nullable = false)

@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
@@ -20,6 +21,7 @@ import lombok.Setter;
 public class Atestado {
 	@Id
 	@Column(name = "atestado_id")
+	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID atestadoId;
 
 
@@ -39,6 +41,7 @@ public class Atestado {
 	private String motivo;
 
 	@Column(name = "data_criacao")
+	@CreationTimestamp
 	private LocalDateTime dataCriacao;
 
 

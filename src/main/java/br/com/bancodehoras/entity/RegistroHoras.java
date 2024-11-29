@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
@@ -22,6 +23,7 @@ public class RegistroHoras {
 
 	@Id
 	@Column(name = "registro_id")
+	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID registroId;
 
 	@Column(name = "horas_trabalhadas")
@@ -47,6 +49,7 @@ public class RegistroHoras {
 	private Time horaEntrada;
 
 	@Column(name = "data_criacao")
+	@CreationTimestamp
 	private LocalDateTime dataCriacao;
 
 

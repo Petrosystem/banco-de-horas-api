@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,9 +21,8 @@ import lombok.Setter;
 public class RegistroHoras {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
 	@Column(name = "registro_id")
-	private Long registroId;
+	private UUID registroId;
 
 	@Column(name = "horas_trabalhadas")
 	private Time horasTrabalhadas;

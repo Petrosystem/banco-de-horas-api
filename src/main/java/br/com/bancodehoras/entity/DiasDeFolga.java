@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -18,9 +19,8 @@ import java.util.Date;
 public class DiasDeFolga {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "dia_de_folga_id")
-    private Long diaDeFolgaId;
+    private UUID diaDeFolgaId;
 
     @ManyToOne
     @JoinColumn(name = "funcionario_id")

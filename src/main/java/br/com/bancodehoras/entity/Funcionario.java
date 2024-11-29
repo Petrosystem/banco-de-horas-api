@@ -10,19 +10,19 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 @AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name="funcionarios")
+@Table(name="funcionario")
 public class Funcionario {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
 	@Column(name = "funcionario_id")
-	private Long funcionarioId;
+	private UUID funcionarioId;
 
 	private String nome;
 

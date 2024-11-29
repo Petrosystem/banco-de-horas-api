@@ -1,6 +1,7 @@
 package br.com.bancodehoras.entity;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 
@@ -19,8 +20,7 @@ import lombok.Setter;
 public class Atestado {
 	@Id
 	@Column(name = "atestado_id")
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private Long atestadoId;
+	private UUID atestadoId;
 
 
 	@ManyToOne

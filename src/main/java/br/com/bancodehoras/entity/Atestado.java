@@ -1,6 +1,7 @@
 package br.com.bancodehoras.entity;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 
@@ -9,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
@@ -20,7 +22,7 @@ public class Atestado {
 	@Id
 	@Column(name = "atestado_id")
 	@GeneratedValue(strategy = GenerationType.UUID)
-	private Long atestadoId;
+	private UUID atestadoId;
 
 
 	@ManyToOne
@@ -39,6 +41,7 @@ public class Atestado {
 	private String motivo;
 
 	@Column(name = "data_criacao")
+	@CreationTimestamp
 	private LocalDateTime dataCriacao;
 
 

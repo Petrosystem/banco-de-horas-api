@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
@@ -20,9 +22,9 @@ import lombok.Setter;
 public class RegistroHoras {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
 	@Column(name = "registro_id")
-	private Long registroId;
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private UUID registroId;
 
 	@Column(name = "horas_trabalhadas")
 	private Time horasTrabalhadas;
@@ -47,6 +49,7 @@ public class RegistroHoras {
 	private Time horaEntrada;
 
 	@Column(name = "data_criacao")
+	@CreationTimestamp
 	private LocalDateTime dataCriacao;
 
 

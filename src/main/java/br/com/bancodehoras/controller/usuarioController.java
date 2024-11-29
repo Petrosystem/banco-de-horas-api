@@ -25,8 +25,8 @@ public class usuarioController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/salvar")
 	public Funcionario cadastrarUsuario(@RequestBody Funcionario usuario) {
-		Funcionario novoUser = usuarioService.salvarUsuario(usuario);
-		return novoUser;
+		return usuarioService.salvarUsuario(usuario);
+
 	}
 
 	@ResponseStatus(HttpStatus.OK)
